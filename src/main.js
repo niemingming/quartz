@@ -15,6 +15,8 @@ Vue.use(VueI18n);
 Vue.use(ElementUI, {
     size: 'small'
 });
+
+
 const i18n = new VueI18n({
     locale: 'zh',
     messages
