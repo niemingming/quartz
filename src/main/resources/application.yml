@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: quartzmanager
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    username: nmm
+    password: nmmstudy
+    url: jdbc:mysql://localhost:3306/nmmquartz?autoReconnect=true&useUnicode=true&characterEncoding=UTF8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    hikari:
+      auto-commit: true
+      maximum-pool-size: 20
+      minimum-idle: 2
+      connection-timeout: 20000
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  quartz:
+    scheduler-name: ${spring.application.name}
+    job-store-type: jdbc
+    properties:
+      org:quartz:threadPool:threadCount: 10
+  #mybatis
+mybatis-plus:
+  mapper-locations: mapper/*Mapper.xml
+server:
+  port: 8000
