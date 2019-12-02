@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const service = axios.create({
     // process.env.NODE_ENV === 'development' 来判断是否开发环境
-    baseURL: process.env.VUE_APP_BASEURL,//配置不同环境的后台
+    // baseURL: process.env.VUE_APP_BASEURL,//配置不同环境的后台
     withCredentials:true,//携带cookie
     timeout: 5000
 })
